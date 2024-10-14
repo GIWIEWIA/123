@@ -11,12 +11,27 @@ export class CurrentActivitiesComponent implements OnInit {
   activities: any[] = []; // เก็บข้อมูลกิจกรรม
   loading: boolean = false; // ใช้แสดงสถานะการโหลด
   activity: any = {}; 
+  user: any = {}; // เก็บข้อมูลผู้ใช้
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.loading = true;
     this.fetchActivities(); // เรียก fetch กิจกรรมเมื่อ component ถูกโหลด
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1])); // ถอดรหัส JWT
+      console.log(payload);
+      
+      this.user = {
+        role: payload.role
+      };
+    
+      console.log(this.user.role);
+      
+    
   }
+}
 
   // Method สำหรับดึงข้อมูลกิจกรรมจาก API
   fetchActivities() {
@@ -35,8 +50,14 @@ export class CurrentActivitiesComponent implements OnInit {
   }
 
   navigateToSignup(activityId: number) {
-    this.router.navigate(['/activity-signup', activityId]);
+    if (this.user.role === 'admin') {
+      this.router.navigate(['/activity-signup', activityId]);
+    } else if (this.user.role === 'user') {
+      this.router.navigate(['/formcontrol', activityId]);
+    }
   }
+   
+  
 
   navigateToDonation(activityId: number) {
     this.router.navigate(['/donation', activityId]);
@@ -46,3 +67,4 @@ export class CurrentActivitiesComponent implements OnInit {
 
   
 }
+

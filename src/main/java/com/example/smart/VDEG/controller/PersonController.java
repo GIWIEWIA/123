@@ -83,4 +83,34 @@ public class PersonController {
             return ResponseEntity.status(400).body(e.getMessage());
         }
     }
+    // Update person firstName lastName
+    @PutMapping("/{id}/update-name")
+    public ResponseEntity<Person> updatePersonName(
+            @PathVariable Long id, 
+            @RequestParam String firstName, 
+            @RequestParam String lastName) {
+        
+        Person updatedPerson = personService.updatePersonName(id, firstName, lastName);
+        return ResponseEntity.ok(updatedPerson);
+    }
+
+
+    // Update person details
+    @PutMapping("/{id}/update-details")
+    public ResponseEntity<Person> updatePersonDetails(
+            @PathVariable Long id,
+            @RequestBody Person updateRequest) {  // ใช้ Person โดยตรงใน @RequestBody
+        
+        Person updatedPerson = personService.updatePersonDetails(
+            id,
+            updateRequest.getEmail(),
+            updateRequest.getPhone(),
+            updateRequest.getContact(),
+            updateRequest.getIllness(),
+            updateRequest.getAllergies(),
+            updateRequest.getReligion(),
+            updateRequest.getFoodallergies()
+        );
+        return ResponseEntity.ok(updatedPerson);
+    }
 }

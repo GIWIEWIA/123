@@ -39,6 +39,7 @@ import { AddActivityInformationComponent } from './Activities/add-activity-infor
 import { PopupComponent } from './popup/popup.component'; // Import FormsModule her
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormcontrolComponent } from './formcontrol/formcontrol.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ActivityInformationComponent,
     AddActivityInformationComponent,
     PopupComponent,
+    FormcontrolComponent,
     
     
   ],
