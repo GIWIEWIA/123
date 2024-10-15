@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formcontrol',
@@ -66,6 +67,16 @@ export class FormcontrolComponent implements OnInit{
       .subscribe(response => {
         console.log('Signup success:', response);
         this.incrementVolunteer(this.activityId);
+        Swal.fire({
+          title: 'ขออภัย',
+          text: 'เมนูนี้หมดแล้วค่ะ',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate (['/home']) ; // Refresh the page
+          }
+        });
       }, error => {
         console.error('Error occurred during signup:', error);
       });

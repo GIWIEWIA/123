@@ -1,0 +1,75 @@
+.activity-s {
+    padding: 44px;
+    /* width: 100%; */
+    /* border: solid black 1px; */
+    max-width: 800px;
+    margin: 0 auto; /* จัดกึ่งกลาง */
+    background-color: #f8f8f8;
+    border-radius: 8px;
+
+    
+    /* row-gap: 20px; */
+}
+
+.data-s {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    
+    /* border: solid rgb(169, 45, 45) 1px */
+}
+.head{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left h3{
+ font-size: 20px;
+}
+
+.right h3{
+    font-size: 20px;
+   }
+.data-s img {
+    width: 100%;
+    
+}
+.dis{
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+
+.dis p{
+    /* width: 95%;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+.b-end{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    padding-top:  80px; 
+    justify-content: center;
+    align-items: center;
+}
+
+.b-end h1{
+    font-size: 35px;
+}
+button{
+    cursor: pointer;
+    box-shadow:  10px rgba(0, 0, 0, 0.5);
+    border: solid 0px;
+    font-size: 25px;
+    color: #ffffff;
+    margin-top: 20px;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #114201 -90%, #2BA803);
+}

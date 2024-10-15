@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,15 +9,16 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   user: any = {};
+
   isAdmin: boolean = false;
-  menuOpen: boolean = false;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
     if (token) {
-      const payload = JSON.parse(atob(token.split('.')[1]));
+      // ถอดรหัส token โดยใช้ atob()
+      const payload = JSON.parse(atob(token.split('.')[1])); // ดึง payload จาก JWT
 
       this.user = {
         firstName: payload.firstName,
@@ -34,17 +36,15 @@ export class NavbarComponent implements OnInit {
   }
 
   navigateToProfile(event: Event) {
-    event.preventDefault();
+    event.preventDefault();  // ป้องกันการโหลดหน้าซ้ำ
 
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token'); // ตรวจสอบ token ใน localStorage
     if (token) {
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/profile']); // ถ้ามี token นำทางไปยังหน้า profile
     } else {
-      this.router.navigate(['/login-guest']);
+      this.router.navigate(['/login-guest']); // ถ้าไม่มี token นำทางไปยังหน้า login-guest
     }
   }
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
+  
 }

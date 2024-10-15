@@ -3,7 +3,8 @@
 .Profile {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* ให้เนื้อหาโปรไฟล์ใช้ความสูงเต็มหน้าจอ */
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
@@ -28,7 +29,7 @@ h1{
     gap: 20px;   
 }
 .card{
-    width: 80%;
+    width: 900px;
     padding: 10px;
     border: 1px dashed line;
     display: flex;

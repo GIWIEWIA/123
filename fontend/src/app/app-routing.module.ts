@@ -18,6 +18,7 @@ import { RegistrationHistoryComponent } from './registration-history/registratio
 import { ActivityInformationComponent } from './Activities/activity-information/activity-information.component';
 import { AddActivityInformationComponent } from './Activities/add-activity-information/add-activity-information.component';
 import { FormcontrolComponent } from './formcontrol/formcontrol.component';
+import { ActivitySignupFinComponent } from './Activities/activity-signup-fin/activity-signup-fin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },  // เปลี่ยนเส้นทางเริ่มต้นเป็นหน้า login
@@ -38,8 +39,9 @@ const routes: Routes = [
   { path: 'registartion', component: RegistrationHistoryComponent },
   { path: 'activity-infor', component: ActivityInformationComponent },
   { path: 'add-information', component: AddActivityInformationComponent },
+  { path: 'add-information', component: AddActivityInformationComponent },
   { path: 'formcontrol/:activityId', component: FormcontrolComponent },
-
+  { path: 'activity-fin', component: ActivitySignupFinComponent },
 
 
 ];

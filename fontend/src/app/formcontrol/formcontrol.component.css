@@ -86,6 +86,11 @@
     padding: 44px;
     /* width: 100%; */
     /* border: solid black 1px; */
+    padding: 20px;
+    max-width: 950px;
+    margin: 0 auto; /* จัดกึ่งกลาง */
+    /* background-color: #f8f8f8; */
+    border-radius: 8px;
 }
 
 .data-s {
@@ -103,19 +108,27 @@
 }
 .data-s img {
     width: 100%;
-    height: 200px;
-    padding: 10px;
-    border: 10px;
-    object-fit: cover;
+    height: 230px;
+    object-position: center;
+    /* object-fit: cover; */
+    border-radius: 15px;
 }
-.dis{
+
+.left h3{
+    font-size: 20px;
+   }
    
+   .right h3{
+       font-size: 20px;
+      }
+.dis{
+    font-size: 20px;
     margin-left: 20px;
 }
 
 .dis p{
-    width: 95%;
+    /* width: 95%;
     white-space: wrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
 }

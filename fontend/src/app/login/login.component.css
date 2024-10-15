@@ -9,7 +9,7 @@
     background-image: url(../../assets/imgs/login/bg.png);
 }
 .conteaner {
-    /* padding: 60px; */
+    padding: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;

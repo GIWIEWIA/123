@@ -1,7 +1,7 @@
-<div >
+<div class="p-10">
 <div class="flex justify-center">ACTIVITY SUMMARY</div>
 <div class="flex justify-center mt-6 ">
-    <div style="height: 234px; width: 80%; "class="flex items-center justify-center border-2 rounded-xl "  >
+    <div style="height: 220px; width: 60%; "class="flex items-center justify-center border-2 rounded-xl "  >
         <div (click)="openModal()" class="cursor-pointer">+ Add Summary</div>
      
 
@@ -53,7 +53,7 @@
 </div>
 <div class="flex justify-center my-6">BUDGET SUMMARY</div>
 <div class="flex justify-center mt-3 ">
-    <div style="height: 234px; width: 80%; "class="flex items-center justify-center border-2 rounded-xl"  >
+    <div style="height: 220px; width: 60%; "class="flex items-center justify-center border-2 rounded-xl"  >
         <div data-modal-target="default-modal1" data-modal-toggle="default-modal1" (click)="openModal1()" class="cursor-pointer">+ Add Summary</div>
      
 
@@ -88,6 +88,7 @@
           <input type="text" [(ngModel)]="activitySummary.problemsFaced" class="w-full rounded-md" placeholder="Enter Details">
           <div>Solutions to Problems:</div>
           <input type="text" [(ngModel)]="activitySummary.solutionsToProblems" class="w-full rounded-md" placeholder="Enter Details">
+          
         </div>
         <!-- Modal footer -->
         <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
