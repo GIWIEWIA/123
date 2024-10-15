@@ -9,11 +9,26 @@ import { Router } from '@angular/router';
 })
 export class CurrentActivitiesCarousalComponent implements OnInit {
   activities: any[] = []; // สร้าง array สำหรับเก็บกิจกรรม
+  user: any = {}; // เก็บข้อมูลผู้ใช้
 
   constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit() {
     this.getActiveActivities();
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1])); // ถอดรหัส JWT
+      console.log(payload);
+      
+      this.user = {
+        role: payload.role
+      };
+    
+      console.log(this.user.role);
+      
+    
+  }
   }
 
   // Method สำหรับดึงข้อมูลกิจกรรมที่ active
@@ -41,7 +56,10 @@ export class CurrentActivitiesCarousalComponent implements OnInit {
   }
 
   navigateToSignup(activityId: number) {
-    this.router.navigate(['/activity-signup', activityId]);
-    
+    if (this.user.role === 'admin') {
+      this.router.navigate(['/activity-signup', activityId]);
+    } else if (this.user.role === 'user') {
+      this.router.navigate(['/formcontrol', activityId]);
+    }
   }
 }

@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    width: 100%;
+    /* background-color: antiquewhite; */
+
+}
+.head h1{
+    font-size: 32px;
+}
+
+.form{
+    /* background-color: aqua; */
+    /* height: 400px; */
+    width: 451px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.top{
+    display: flex;
+    gap: 10px;
+}
+
+.top input{
+    width: 221px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgba(247, 242, 250, 1);
+    border: solid 0px;
+    box-shadow:  1px 1px rgba(0, 0, 0, 0.5);
+    padding-left: 10px; /* ขยับข้อความไปทางขวา */
+
+    
+}
+
+.bottom-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px; 
+    
+}
+
+.bottom-form2{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-form input{
+    padding-left: 10px; /* ขยับข้อความไปทางขวา */
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgba(247, 242, 250, 1);
+    /* width: 441px; */
+    box-shadow:  1px 1px rgba(0, 0, 0, 0.5);
+
+    border: solid 0px;
+}
+
+.btn{
+    cursor: pointer;
+    box-shadow:  10px rgba(0, 0, 0, 0.5);
+    border: solid 0px;
+    font-size: 32px;
+    color: #ffffff;
+    margin-top: 20px;
+    width: 326px;
+    height: 63px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #114201 -90%, #2BA803);
+    justify-content: center;
+}
+
+.activity-s {
+    padding: 44px;
+    /* width: 100%; */
+    /* border: solid black 1px; */
+}
+
+.data-s {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    
+    /* border: solid black 1px */
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.data-s img {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 10px;
+    object-fit: cover;
+}
+.dis{
+   
+    margin-left: 20px;
+}
+
+.dis p{
+    width: 95%;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

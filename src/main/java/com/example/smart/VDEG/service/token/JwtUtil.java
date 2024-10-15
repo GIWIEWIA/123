@@ -50,8 +50,9 @@ public class JwtUtil {
     }
 
     // สร้าง token โดยใช้ข้อมูลผู้ใช้
-    public String generateToken(String username, String firstName, String lastName, String email, String role, Long phone, String imageprofile, Long contact , String illness, String allergies , String religion , String foodallergies ) {
+    public String generateToken(Long id,String username, String firstName, String lastName, String email, String role, Long phone, String imageprofile, Long contact , String illness, String allergies , String religion , String foodallergies ) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("id", id);
         claims.put("firstName", firstName);
         claims.put("lastName", lastName);
         claims.put("email", email);
