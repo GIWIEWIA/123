@@ -26,13 +26,13 @@ public class ParticipantDetailController {
 
     // Get ParticipantDetail by ID
     @GetMapping("/{id}")
-    public ResponseEntity<ParticipantDetail> getParticipantDetailById(@PathVariable Long id) {
+    public ResponseEntity<ParticipantDetail> getParticipantDetailById(@PathVariable("id") Long id) {
         Optional<ParticipantDetail> participantDetail = participantDetailService.getParticipantDetailById(id);
         return participantDetail.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/activity/{activityId}")
-    public ResponseEntity<List<ParticipantDetail>> getParticipantDetailsByActivityId(@PathVariable Long activityId) {
+    public ResponseEntity<List<ParticipantDetail>> getParticipantDetailsByActivityId(@PathVariable("activityId") Long activityId) {
         List<ParticipantDetail> participantDetails = participantDetailService.getParticipantDetailsByActivityId(activityId);
         return ResponseEntity.ok(participantDetails);
     }
@@ -46,7 +46,7 @@ public class ParticipantDetailController {
 
     // Delete ParticipantDetail by ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteParticipantDetail(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteParticipantDetail(@PathVariable("id") Long id) {
         participantDetailService.deleteParticipantDetail(id);
         return ResponseEntity.noContent().build();
     }

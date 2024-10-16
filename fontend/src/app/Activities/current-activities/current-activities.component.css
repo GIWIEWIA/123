@@ -68,7 +68,7 @@ h2 {
 
 .discipstion p {
     width: 500px;
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 200px;
     margin-top: 0;
     margin-bottom: 20px; /* Adds space between paragraphs */

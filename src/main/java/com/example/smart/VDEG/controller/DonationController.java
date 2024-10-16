@@ -64,7 +64,7 @@ public class DonationController {
     }
 
     @GetMapping("/activity/{activityId}")
-    public ResponseEntity<List<Map<String, Object>>> getDonationsByActivityId(@PathVariable Long activityId) {
+    public ResponseEntity<List<Map<String, Object>>> getDonationsByActivityId(@PathVariable("activityId") Long activityId) {
         List<Map<String, Object>> donations = donationService.getDonationsByActivityId(activityId);
         return ResponseEntity.ok(donations);
     }

@@ -68,8 +68,8 @@ export class FormcontrolComponent implements OnInit{
         console.log('Signup success:', response);
         this.incrementVolunteer(this.activityId);
         Swal.fire({
-          title: 'ขออภัย',
-          text: 'เมนูนี้หมดแล้วค่ะ',
+          title: 'Success',
+          text: 'ลงทะเบียนกิจกรรมสำเร็จ',
           icon: 'success',
           confirmButtonText: 'OK'
         }).then((result) => {

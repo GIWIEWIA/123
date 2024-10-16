@@ -41,7 +41,7 @@ public class ActivityController {
 
     @PostMapping("/{activityId}/update-link")
     public ResponseEntity<Activity> updateInformationLink(
-            @PathVariable Long activityId,
+            @PathVariable("activityId") Long activityId,
             @RequestBody String informationLink) {
 
         Optional<Activity> updatedActivity = activityService.updateInformationLink(activityId, informationLink);
@@ -88,7 +88,7 @@ public class ActivityController {
     }
 
     @PutMapping("/{id}/status")
-    public ResponseEntity<Activity> updateActivityStatus(@PathVariable Long id, @RequestBody boolean status) {
+    public ResponseEntity<Activity> updateActivityStatus(@PathVariable("id") Long id, @RequestBody boolean status) {
         Optional<Activity> updatedActivity = activityService.updateActivityStatus(id, status);
         return updatedActivity.map(activity -> ResponseEntity.ok(activity))
                 .orElseGet(() -> ResponseEntity.notFound().build());
