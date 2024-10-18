@@ -7,7 +7,7 @@
         <div class="bubble">
             <div class="PG1">
                 <a href="#">
-                    <img  src="../../assets/imgs/profile/proflies.svg" alt="" width="80px">
+                    <img  [src]="profileImageUrl" alt="" width="80px" class="rounded-full w-28 h-28">
                 </a>
             </div>
             <div class="PG2">
@@ -27,7 +27,10 @@
                         <div class="flex justify-center text-3xl">PERSONAL INFORMATION</div>
                         <!-- Modal body -->
                         <div class="flex justify-around items-center my-6">
-                            <img src="../../assets/imgs/profile/proflies.svg" alt="" width="220px">
+                            <img [src]="profileImageUrl" alt="" width="220px" (click)="triggerFileInput()" class="rounded-full w-28 h-28" />
+                            <!-- ซ่อน input file -->
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)" style="display: none;" />
+                     
                             <div>
                                 <div>First Name:</div>
                                 <input type="text" [(ngModel)]="firstName" placeholder="Enter First Name"

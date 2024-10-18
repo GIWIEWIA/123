@@ -12,6 +12,7 @@ export class ProfileComponent {
   @Input() isVisible: boolean = false;
   @Input() isVisible1: boolean = false;
   @Output() close: EventEmitter<void> = new EventEmitter();
+  profileImageUrl: string = '../../assets/imgs/profile/proflies.svg'; 
 
   firstName: string = ''; // เก็บค่าจาก input field
   lastName: string = '';  // เก็บค่าจาก input field
@@ -59,10 +60,13 @@ export class ProfileComponent {
       this.religion = this.user.religion;
 
       console.log(this.foodallergies);
+
+      this.profileImageUrl = this.user.profileImage || this.profileImageUrl;
       
     }
   }
 
+ 
   // ฟังก์ชันสำหรับการอัปเดตชื่อและนามสกุล
   updateName() {
     const id = this.user.id; // ใช้ id จาก JWT
@@ -110,6 +114,22 @@ export class ProfileComponent {
         console.error('Error updating details:', error);
       }
     });
+  }
+
+  triggerFileInput() {
+    const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+    fileInput.click();
+  }
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.profileImageUrl = reader.result as string; // แสดงรูปที่เลือก
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
 
