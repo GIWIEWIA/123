@@ -101,7 +101,7 @@ export class FormcontrolComponent implements OnInit {
               }
             }).then((result) => {
               if (result.isConfirmed) {
-                this.router.navigate(['/home']); // นำทางไปหน้า home เมื่อกดปุ่ม OK
+                window.location.reload(); // นำทางไปหน้า home เมื่อกดปุ่ม OK
               }
             });
           }, error => {
