@@ -134,12 +134,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let activity of activities; let i = index">
-            <td>{{ i + 1 }}</td>
+          <tr *ngFor="let activity of activity; let i = index">
+            <td>{{ activity.budgetId }}</td>
             <td>{{ activity.item }}</td>
-            <td>{{ activity.given }}</td>
-            <td>{{activity.use}}</td>
-            <td>{{activity.remaining}}</td>
+            <td>{{ activity.budgetGiven }}</td>
+            <td>{{activity.budgetUsed}}</td>
+            <td>{{activity.remainingBudget}}</td>
 
             <!-- <td>
               <label class="switch">

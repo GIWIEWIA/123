@@ -9,50 +9,130 @@
     /* align-items: center; */
     justify-content: center;
     flex-direction: column;
-    
+
     /* border: solid black 1px */
+    padding: 10px;
+    /* width: 100%; */
+    /* border: solid black 1px; */
+    max-width: 800px;
+    margin: 0 auto;
+    /* จัดกึ่งกลาง */
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 3px 1px 4px 2px rgba(0, 0, 0, 0.2);
+
 }
-.head{
+
+.head {
+    padding-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
+
 .data-c img {
+    /* width: 100%; */
+
     width: 100%;
+    height: 230px;
+    object-position: center;
+    /* object-fit: cover; */
+    border-radius: 15px;
 }
-.dis{
+
+.dis {
     margin-left: 20px;
+    font-size: 18px;
 }
 
 
 
-.content{
+.content {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 90px;
-    
-}
-.data h1{
-text-align: center;
-font-size: 32px;
+
 }
 
-.data{
+.data h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+
+.left h3 {
+    font-size: 20px;
+}
+
+.right h3 {
+    font-size: 20px;
+}
+
+.data {
     justify-content: center;
     flex-direction: column;
     align-items: center;
     display: flex;
 }
+
 button {
     cursor: pointer;
-    box-shadow:  10px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px rgba(0, 0, 0, 0.5);
     border: solid 0px;
-    font-size: 32px;
+    font-size: 20px;
     color: #ffffff;
     margin-top: 20px;
-    width: 326px;
-    height: 63px;
+    width: 200px;
+    height: 40px;
     border-radius: 10px;
     background: linear-gradient(to bottom, #114201 -90%, #2BA803);
+}
+
+.dis-d {
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.b-end {
+    max-width: 700px;
+    /* border:  solid 2px yellow; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* row-gap: 12px; */
+    /* padding-top:  50px;  */
+    justify-content: center;
+    align-items: center;
+}
+
+.b-end h1 {
+    font-size: 30px;
+}
+
+button {
+    cursor: pointer;
+    box-shadow: 10px rgba(0, 0, 0, 0.5);
+    border: solid 0px;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #114201 -90%, #2BA803);
+}
+
+.btn-end {
+
+    margin: -10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
 }

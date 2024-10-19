@@ -57,7 +57,7 @@ export class FormcontrolComponent implements OnInit {
         console.log(response);
         const endDate = new Date(this.activity.endDate);
         if (endDate < new Date() || this.activity.totalvolunteerAmount == this.activity.volunteerAmount) {
-          this.router.navigate(['/activity-close'])
+          this.router.navigate(['/activity-close', this.activityId]);
         }
         else if (response === 'Person has already registered for this activity.') {
           this.router.navigate(['/activity-fin', this.activityId]);
