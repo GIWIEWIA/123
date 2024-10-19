@@ -72,14 +72,37 @@ font-size: 32px;
 }
 .text1 {
     /* border: 2px solid green; */
-    width: fit-content
+    /* width: fit-content */
+    box-sizing: border-box;
+    width: 100% ;
+}
+.text1 p {
+    width: 500px; /* หรือระบุขนาดตามที่ต้องการ เช่น 300px */
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* หรือลองเปลี่ยนเป็น normal ถ้าต้องการให้ข้อความขึ้นบรรทัดใหม่ */
+    word-wrap: break-word;
 }
 .text2 {
     /* border: 2px solid yellow; */
-    width: fit-content
+    /* width: fit-content */
+    box-sizing: border-box;
+    width: 100% ;
 
 }
+
+
+.text2 p {
+    width: 500px; /* หรือระบุขนาดตามที่ต้องการ เช่น 300px */
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* หรือลองเปลี่ยนเป็น normal ถ้าต้องการให้ข้อความขึ้นบรรทัดใหม่ */
+    word-wrap: break-word;
+}
 .griditem{
+    /* border: 2px solid rgb(48, 56, 207); */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2em;
@@ -173,8 +196,4 @@ td, th {
 td:first-child {
     font-weight: bold;
 }
-
-
-
-
 

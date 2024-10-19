@@ -51,7 +51,7 @@ public class ActivitySummaryService {
         activitySummaryRepository.delete(activitySummary);
     }
 
-    public List<ActivitySummary> getActivitySummariesByActivityId(Long activityId) {
+    public Optional<ActivitySummary> getActivitySummariesByActivityId(Long activityId) {
         return activitySummaryRepository.findByActivityId(activityId);
     }
 }

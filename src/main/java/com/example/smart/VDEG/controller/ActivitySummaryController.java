@@ -41,8 +41,8 @@ public class ActivitySummaryController {
 
     // Get activity summaries by activity ID
     @GetMapping("/activity/{activityId}")
-    public ResponseEntity<List<ActivitySummary>> getActivitySummariesByActivityId(@PathVariable("id") Long activityId) {
-        List<ActivitySummary> activitySummaries = activitySummaryService.getActivitySummariesByActivityId(activityId);
+    public ResponseEntity<Optional<ActivitySummary>> getActivitySummariesByActivityId(@PathVariable("activityId") Long activityId) {
+        Optional<ActivitySummary> activitySummaries = activitySummaryService.getActivitySummariesByActivityId(activityId);
         return ResponseEntity.ok(activitySummaries);
     }
 
