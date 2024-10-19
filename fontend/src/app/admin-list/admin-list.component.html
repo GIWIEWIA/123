@@ -26,6 +26,8 @@
         <th>Information</th>
         <th>Files</th>
         <th>Status</th>
+        <th>Report</th>
+        <th>Volunteer</th>
       </tr>
     </thead>
     <tbody>
@@ -46,6 +48,8 @@
             <span class="slider round"></span>
           </label>
         </td>
+        <td><button class="btndefault" (click)="gotoReport(activity.activityId)">Report</button></td>
+        <td><button class="btndefault" (click)="gotoVolunteer(activity.activityId)">Volunteer</button></td>
       </tr>
     </tbody>
   </table>

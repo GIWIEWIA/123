@@ -19,6 +19,11 @@
 
 }
 
+.btndefault{
+    background-color: #ccc;
+    border-color: black;
+}
+
 .search-container {
     display: flex;
     align-items: center;
