@@ -40,8 +40,6 @@
     border: solid 0px;
     box-shadow:  1px 1px rgba(0, 0, 0, 0.5);
     padding-left: 10px; /* ขยับข้อความไปทางขวา */
-
-    
 }
 
 .bottom-form{
@@ -124,11 +122,4 @@
 .dis{
     font-size: 20px;
     margin-left: 20px;
-}
-
-.dis p{
-    /* width: 95%;
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
 }

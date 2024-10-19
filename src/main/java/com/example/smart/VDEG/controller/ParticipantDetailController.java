@@ -50,4 +50,18 @@ public class ParticipantDetailController {
         participantDetailService.deleteParticipantDetail(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/check-registration")
+    public ResponseEntity<String> checkPersonRegistration(
+            @RequestParam("activityId") Long activityId,
+            @RequestParam("personId") Long personId) {
+
+        boolean isRegistered = participantDetailService.isPersonRegisteredForActivity(activityId, personId);
+
+        if (isRegistered) {
+            return ResponseEntity.ok("Person has already registered for this activity.");
+        } else {
+            return ResponseEntity.ok("Person has not registered for this activity yet.");
+        }
+    }
 }

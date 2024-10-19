@@ -100,7 +100,16 @@ export class ActivityCreationAdminComponent {
                       this.http.post('http://localhost:8080/api/activities', formData).subscribe({  
                         next: (response) => {
                           console.log('Activity created successfully:', response);
-                          Swal.fire('success', 'Activity created successfully!', 'success');
+                          Swal.fire({
+                            title: 'createdsuccessfully!',
+                            text: 'Activity created successfully!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              window.location.href = `/admin-list/` ; // Refresh the page
+                            }
+                          });
                         },
                         error: (error) => {
                           console.error('Error creating activity:', error);

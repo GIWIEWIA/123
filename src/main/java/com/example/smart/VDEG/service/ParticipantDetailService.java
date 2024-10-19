@@ -1,6 +1,8 @@
 package com.example.smart.VDEG.service;
 
+import com.example.smart.VDEG.entity.Activity;
 import com.example.smart.VDEG.entity.ParticipantDetail;
+import com.example.smart.VDEG.repository.ActivityRepository;
 import com.example.smart.VDEG.repository.ParticipantDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class ParticipantDetailService {
 
     @Autowired
     private ParticipantDetailRepository participantDetailRepository;
+
+    @Autowired
+    private ActivityRepository activityRepository;
 
     // Create or Update
     public ParticipantDetail saveOrUpdateParticipantDetail(ParticipantDetail participantDetail) {
@@ -36,7 +41,9 @@ public class ParticipantDetailService {
             participantDetail.setFirstName((String) obj[1]);
             participantDetail.setLastName((String) obj[2]);
             participantDetail.setPhoneNumber((String) obj[3]);
-            participantDetail.setEmergencyContact((String) obj[4]);
+            participantDetail.setAllergies((String) obj[4]);
+            participantDetail.setMedicalHistory((String) obj[5]);
+            participantDetail.setEmergencyContact((String) obj[6]);
             return participantDetail;
         }).collect(Collectors.toList());
     }
@@ -50,4 +57,15 @@ public class ParticipantDetailService {
     public void deleteParticipantDetail(Long id) {
         participantDetailRepository.deleteById(id);
     }
+
+ public boolean isPersonRegisteredForActivity(Long activityId, Long personId) {
+        Optional<Activity> activity = activityRepository.findById(activityId);
+        if (activity.isEmpty()) {
+            return false; // หรือจัดการในกรณีที่ activity ไม่พบ
+        }
+
+        Optional<ParticipantDetail> participantDetail = participantDetailRepository.findByActivityAndPersonId(activity.get(), personId);
+        return participantDetail.isPresent();
+    }
+
 }

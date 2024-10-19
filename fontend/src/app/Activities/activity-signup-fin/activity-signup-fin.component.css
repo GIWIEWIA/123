@@ -46,22 +46,23 @@
 }
 .dis{
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
-
-.dis p{
-    /* width: 95%;
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
+.dis-d{
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .b-end{
+    max-width: 700px;
+    /* border:  solid 2px yellow; */
     display: flex;
     flex-direction: column;
     text-align: center;
-    
-    padding-top:  50px; 
+    /* row-gap: 12px; */
+    /* padding-top:  50px;  */
     justify-content: center;
     align-items: center;
 }
@@ -69,15 +70,27 @@
 .b-end h1{
     font-size: 30px;
 }
+
 button{
     cursor: pointer;
     box-shadow:  10px rgba(0, 0, 0, 0.5);
     border: solid 0px;
-    font-size: 25px;
+    font-size: 20px;
     color: #ffffff;
     margin-top: 20px;
-    width: 250px;
-    height: 50px;
+    width: 200px;
+    height: 40px;
     border-radius: 10px;
     background: linear-gradient(to bottom, #114201 -90%, #2BA803);
+}
+
+.btn-end{
+   
+    margin: -10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
 }

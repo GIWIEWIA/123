@@ -42,9 +42,22 @@
     margin-left: 20px;
 }
 
-.dis p{
-    /* width: 95%;
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
+.btnvolunteer{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+button{
+    cursor: pointer;
+    box-shadow:  10px rgba(0, 0, 0, 0.5);
+    border: solid 0px;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #114201 -90%, #2BA803);
 }

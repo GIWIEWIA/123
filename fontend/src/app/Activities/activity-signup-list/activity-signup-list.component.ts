@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./activity-signup-list.component.css']
 })
 export class ActivitySignupListComponent implements OnInit{
-
+  
   loading: boolean = true;
   activities: any[] = [];
   activityId: number = 0;

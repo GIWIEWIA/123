@@ -37,4 +37,8 @@ public class ParticipantDetail {
     @ManyToOne
     @JoinColumn(name = "activity_id", nullable = false)
     private Activity activity;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id", nullable = false)
+    private Person person;
 }

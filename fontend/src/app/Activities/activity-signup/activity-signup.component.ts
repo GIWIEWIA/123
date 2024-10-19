@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-activity-signup',
@@ -11,8 +11,10 @@ export class ActivitySignupComponent implements OnInit {
   activityId: number = 0;
   loading: boolean = false;
   activity: any = {}; 
+  showForm: boolean = false;
+  showbtn: boolean = false;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     // รับ activityId จากพารามิเตอร์ใน URL
@@ -25,6 +27,12 @@ export class ActivitySignupComponent implements OnInit {
     this.http.get<any>('http://localhost:8080/api/activities/' + this.activityId).subscribe({
       next: (data) => {
         this.activity = data; 
+        const endDate = new Date(this.activity.endDate);
+        if (endDate < new Date() || this.activity.totalvolunteerAmount == this.activity.volunteerAmount) {
+          this.showForm = true;
+        }else{
+          this.showbtn = true;
+        }
         console.log('Fetched activity:', this.activity);
       },
       error: (error) => {
@@ -34,6 +42,11 @@ export class ActivitySignupComponent implements OnInit {
         this.loading = false;
       }
     });
+  }
+
+
+  gotovolunteer() {
+    this.router.navigate(['/activity-sinup-list', this.activityId]);
   }
 
 

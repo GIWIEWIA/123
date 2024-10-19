@@ -11,8 +11,8 @@
         <th>No.</th>
         <th>Name</th>
         <th>Tel.</th>
-        <!-- <th>Date</th> -->
-      
+        <th>Allergies</th>
+        <th>medicalHistory</th>
         <th>Emergency Contact</th>
       </tr>
     </thead>
@@ -21,7 +21,9 @@
        <tr *ngFor="let activity of activities">
         <td>{{ activity.id }}</td> <!-- ใช้ id จาก activity แทนหมายเลขลำดับ -->
         <td>{{ activity.firstName }} {{ activity.lastName }}</td> <!-- ชื่อและนามสกุล -->
-        <td>{{ activity.phoneNumber }}</td> <!-- เบอร์โทร -->
+        <td>{{ activity.phoneNumber }}</td>
+        <td>{{ activity.allergies }}</td>
+        <td>{{ activity.medicalHistory }}</td> <!-- เบอร์โทร -->
         <td>{{ activity.emergencyContact }}</td> <!-- เบอร์โทรฉุกเฉิน -->
       </tr>
     </tbody>

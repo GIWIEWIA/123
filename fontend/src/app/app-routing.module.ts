@@ -41,7 +41,7 @@ const routes: Routes = [
   { path: 'add-information', component: AddActivityInformationComponent },
   { path: 'add-information', component: AddActivityInformationComponent },
   { path: 'formcontrol/:activityId', component: FormcontrolComponent },
-  { path: 'activity-fin', component: ActivitySignupFinComponent },
+  { path: 'activity-fin/:activityId', component: ActivitySignupFinComponent },
 
 
 ];

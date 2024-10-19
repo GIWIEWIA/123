@@ -53,14 +53,7 @@
                 name="emergencyContact" required>
         </div>
     </div>
-    <div *ngIf="status == false" class="button-Volunteer">
 
-        <div class="bottom-form2">
-            <h1>THIS FORM HAS BEEN CLOSED BY ADMIN</h1>
-        </div>
-    </div>
-
-    <button class="btn" *ngIf="status == false" (click)="goToInformation()">Volunteer Lists</button>
     <button class="btn" *ngIf="status == true" (click)="submitForm()">Signup</button>
 
 </div>

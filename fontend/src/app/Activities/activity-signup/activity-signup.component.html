@@ -31,10 +31,12 @@
 
 
     </div>
-
-
-
+    <div *ngIf="showbtn" class="btnvolunteer">
+        <button (click)="gotovolunteer()">Volunteer List</button>
+    </div>
 
 </div>
 
-<app-form></app-form>
+<div *ngIf="showForm">
+    <app-form></app-form>
+</div>
